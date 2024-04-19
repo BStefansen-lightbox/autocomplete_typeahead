@@ -1,7 +1,18 @@
-const api_key = "<YOUR_API_KEY>"
-
-
 $(document).ready(function() {
+    var apiKey = ""
+
+    function extractKey() {
+        var keyBox = document.getElementById("input-key");
+        apiKey = keyBox.value;
+    }
+    
+    // Add an event listener to the button
+    document.getElementById("apiButton").addEventListener("click", function() {
+        // Call the function from the separate JavaScript file
+        extractKey();
+    });
+
+
     $("#input-text").on("input", function() {
         var inputValue = $(this).val();
         if (inputValue.length >= 3) {
@@ -16,7 +27,7 @@ $(document).ready(function() {
             url: "https://api.lightboxre.com/v1/addresses/_autocomplete",
             method: "GET",
             headers: {
-                "x-api-key": api_key
+                "x-api-key": apiKey
             },
             data: {
                 text: inputValue,

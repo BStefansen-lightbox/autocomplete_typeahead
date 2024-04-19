@@ -29,6 +29,14 @@ h1 {
     box-sizing: border-box;
 }
 
+#input-key {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+    box-sizing: border-box;
+}
+
 #dropdown {
     position: absolute;
     top: 100%;

@@ -11,6 +11,9 @@
     <div class="container">
         <div id="text-box">
             <p>The purpose of this webpage is to demonstrate a typeahead use case for the Lightbox Geocoder Autocomplete API.</p>
+            <p>Please enter the Lightbox Developer Portal API key. This will be used to pull data from the autocomplete API key.</p>
+            <input list="dropdown" type="text" id="input-key" placeholder="Enter API key here">
+            <button id="apiButton">Submit</button>
             <p>While entering a partial address, the LBX geocoder will return a set of address candidates based on autocompletion of the partial string 'text', and display those results as a select dropdown.</p>
             <input list="dropdown" type="text" id="input-text" placeholder="Enter address here">
             <datalist id="dropdown">
