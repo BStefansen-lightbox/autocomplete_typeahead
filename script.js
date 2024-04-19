@@ -5,11 +5,33 @@ $(document).ready(function() {
         var keyBox = document.getElementById("input-key");
         apiKey = keyBox.value;
     }
+
+    function authorizationTest() {
+        $.ajax({
+            url: "https://api.lightboxre.com/v1/addresses/_autocomplete",
+            method: "GET",
+            headers: {
+                "x-api-key": apiKey
+            },
+            data: {
+                text: "5209 Cal",
+                countryCode: "US"
+            },
+            success: function(data, textStatus, xhr) {
+                alert("Authorization Successful");
+            },
+            error: function(xhr, status, error) {
+                alert("Authorization Failed, Error: " + error);
+            }
+        });
+
+    }
     
     // Add an event listener to the button
     document.getElementById("apiButton").addEventListener("click", function() {
         // Call the function from the separate JavaScript file
         extractKey();
+        authorizationTest();
     });
 
 
