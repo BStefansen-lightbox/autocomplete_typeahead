@@ -37,7 +37,7 @@ $(document).ready(function() {
 
     $("#input-text").on("input", function() {
         var inputValue = $(this).val();
-        if (inputValue.length >= 3) {
+        if (inputValue.length > 3) {
             fetchDropdown(inputValue);
         } else {
             $("#dropdown").empty(); // Clear dropdown if input field is empty
